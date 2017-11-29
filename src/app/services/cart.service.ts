@@ -6,11 +6,14 @@ export class CartService {
   constructor() { }
 
   dataArray: any[] = [];
+  priceArray: any[] = [];
 
-  insertData(title: any, price: any) {
-    // this.dataArray.length = 0;
-    this.dataArray.unshift(title, price);
-      console.log(title, price)
+
+  insertData(item, price) {
+
+    this.dataArray.unshift(item);
+
+    this.priceArray.unshift(price);
   }
 
 }

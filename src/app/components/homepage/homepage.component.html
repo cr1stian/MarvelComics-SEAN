@@ -1,0 +1,67 @@
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+<a href="#" routerLink="/" class="w3-bar-item w3-button w3-left"><i class="fa fa-home fa-3x"></i></a>
+  <a href="#" routerLink="/cart" class="w3-bar-item w3-button w3-right">{{counter}}<i class="fa fa-shopping-cart fa-3x"></i></a>
+</div>
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>Marvel Comics</b></h1>
+    <h6>For all your <span class="w3-tag">Comic Books</span></h6>
+
+
+
+  </header>
+
+
+
+
+
+    <!-- Grid -->
+    <div class="w3-row w3-padding">
+
+      <!-- Container -->
+      <div class="container">
+
+        <!-- Cards go in here! -->
+
+
+        <div class="w3-container w3-sand" id="card" *ngFor="let result of results">
+
+          <form (click)="sendToCart(result.title, result.price, result.img)" (click)="increment()">
+
+
+            <h4>{{result.title}}</h4>
+            <img src="{{result.img}}">
+            <h6>{{result.description}}</h6>
+            <p >{{result.price | currency:$}}</p>
+
+          </form>
+
+        </div>
+
+
+
+
+        <!-- END Container -->
+      </div>
+
+
+
+      <!-- END GRID -->
+    </div>
+
+    <!-- END w3-content -->
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-dark-grey" style="text-align:center">
+    <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  </footer>

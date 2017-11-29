@@ -1,7 +1,29 @@
-<h1>CART PAGE</h1>
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" routerLink="/" class="w3-bar-item w3-button w3-left"><i class="fa fa-home fa-3x"></i></a>
+  <a href="#" routerLink="/cart" class="w3-bar-item w3-button w3-right"><i class="fa fa-shopping-cart fa-3x"></i></a>
+</div>
 
+<header class="w3-container w3-center w3-padding-48 w3-white">
+  <h1 class="w3-xxxlarge"><b>Cart</b></h1>
+  <h6> Just that those <span class="w3-tag">Comics ?</span></h6>
 
+</header>
 
+<div class="flex-container">
 
+  <div class="w3-container w3-sand" style="width: 60%; margin: 10px; border-radius: 5px;" *ngFor="let data of datas">
+    <ul class="w3-bar">
+      <img src="{{data.img}}" class="w3-bar-item " style="width:150px">
+      <div class="w3-bar-item">
+        <h3>{{data.title}}</h3>
+        <h4 style="color: #2ecc71">{{data.price | currency: "$" }}</h4>
+      </div>
+    </ul>
+  </div>
 
-<!-- Create homepage component to dump app component hmtl and add router outlet link to app component -->
+</div>
+
+<div class="w3-container totalItems" style="background-color: white; width: 70%; margin: 0 auto; border-radius: 5px; text-align: center;">
+  <h3 style="font-family: Comic Sans MS, cursive, sans-serif;">Your Total is  $<span style="color: #e74c3c">{{totalPrice}}</span>, two words: Limited Edition</h3>
+</div>

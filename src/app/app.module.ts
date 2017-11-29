@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
-const appRoutes: Routes = [{path: 'cart', component: CartComponent}];
+
+const appRoutes: Routes = [
+  { path: '', component: HomepageComponent },
+  { path: 'cart', component: CartComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CartComponent
+    CartComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,10 @@ const appRoutes: Routes = [{path: 'cart', component: CartComponent}];
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [CartService],
+  providers: [
+    CartService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
